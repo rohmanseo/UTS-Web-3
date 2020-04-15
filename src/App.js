@@ -16,7 +16,7 @@ import { render } from "@testing-library/react";
 // https://getbootstrap.com/docs/4.4/examples/navbar-static/
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <div className="App">
         <Header />
         <Switch>
