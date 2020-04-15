@@ -1,12 +1,13 @@
 import React from "react";
 
 function ArticleCard(props) {
-  const  title, summary, imageUrl  = props;
+  const  {title,summary, imageUrl} = props;
+  
   return (
     <div className="col-lg-8">
       <h1 className="mt-4">title</h1>
 
-      <img className="img-fluid rounded" src=imageUrl alt=title />
+      <img className="img-fluid rounded" src={imageUrl} alt={title} />
 
       <hr />
 
@@ -40,7 +41,7 @@ function ArticleCard(props) {
   );
 }
 
-class DetailBlog extends React.Component {
+class BlogDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -95,3 +96,4 @@ class DetailBlog extends React.Component {
   }
 }
 
+export default BlogDetail;
