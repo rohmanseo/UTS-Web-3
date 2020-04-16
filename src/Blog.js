@@ -42,7 +42,12 @@ class Blog extends React.Component {
   }
 
   componentDidMount() {
-    fetch("/api/blog")
+    fetch("/api/blog",{
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+    })
       .then(res => res.json())
       .then(json =>
         this.setState({
@@ -75,6 +80,9 @@ class Blog extends React.Component {
           <div className="col-md-6" key={index}>
             <ArticleCard
               id={article.id}
+              title={article.title}
+              summary={article.summary}
+              imageUrl={article.imageUrl}
             />
           </div>
         ))}
